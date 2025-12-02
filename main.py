@@ -1,12 +1,14 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QFrame, QGridLayout
 
 calcul = resultat = "" 
+
 symbols = ["⌫","AC","=","+",
            "7","8","9","-",
            "4","5","6","*",
            "1","2","3","/",
            ".","0","**","%",
            "(",")","┤"]
+
 
 #A chaque saisie de l'utilisateur, la valeur est ajoutée à la fin du string calcul.
 #Si l'utilisateur saisi un caractère particulier (= ; ┤ ; AC ; ⌫), le programme agira différement. 
@@ -57,13 +59,12 @@ def addToCalcul(value):
         calcul += str(value)
         window.label_render_text.setText(calcul +  "\n" )
         print(f"{calcul}")
-        
-class Calculatrice(QWidget):
 
+
+class Calculatrice(QWidget):
     def __init__(self):
         super().__init__()
-        
-        self.setWindowTitle('Calculatrice HD DELUXE 2000')
+        self.setWindowTitle('Calculatrice PyQt6')
         # self.setWindowIcon(QIcon('app-icon.png'))
         self.setFixedSize(400, 325)
 
